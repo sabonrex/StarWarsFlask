@@ -229,7 +229,7 @@ def delete_specific_vehicle():
     db.session.delete(vehicle)
     db.session.commit
 
-    return jsonify("Vehicle successfully deleted!"), 200 
+    return jsonify("Successfully deleted!"), 200 
 
 @app.route('/get-vehicle', methods=['PUT'])
 def edit_vehicle():
@@ -257,12 +257,12 @@ def add_favorite_people():
     
     user = User.query.get(user_id)
     if not user:
-        raise APIException('Favorite People Not Found', status_code=404)
+        raise APIException('Not Found', status_code=404)
 
     favorite_exist = FavoritePeople.query.filter_by(user_id = user.id, people_id = character.id).first() is not None
     
     if favorite_exist:
-        raise APIException('Favorite people already exists in user account', status_code=404)
+        raise APIException('Already exists in user account', status_code=404)
 
     favorite_people = FavoritePeople(user_id = user.id, people_id = character.id)
     db.session.add(favorite_people)
@@ -279,16 +279,16 @@ def add_favorite_planet():
 
     planet = Planet.query.get(planet_id) 
     if not planet: 
-        raise APIException('Planet not found', status_code=404)
+        raise APIException('Not found', status_code=404)
     
     user = User.query.get(user_id)
     if not user:
-        raise APIException('User not found', status_code=404)
+        raise APIException('Not found', status_code=404)
 
     favorite_exist = FavoritePlanet.query.filter_by(user_id = user.id, planet_id = planet.id).first() is not None
     
     if favorite_exist:
-        raise APIException('Favorite planet already exists in user account', status_code=404)
+        raise APIException('Already exists in user account', status_code=404)
 
     favorite_planet = FavoritePlanet(user_id = user.id, planet_id = planet.id)
     db.session.add(favorite_planet)
@@ -305,16 +305,16 @@ def add_favorite_vehicle():
 
     vehicle = Vehicle.query.get(vehicle_id) 
     if not vehicle: 
-        raise APIException('Vehicle not found', status_code=404)
+        raise APIException('Not found', status_code=404)
     
     user = User.query.get(user_id)
     if not user:
-        raise APIException('User not found', status_code=404)
+        raise APIException('Not found', status_code=404)
 
     favorite_exist = FavoriteVehicle.query.filter_by(user_id = user.id, vehicle_id = vehicle.id).first() is not None
     
     if favorite_exist:
-        raise APIException('Favorite vehicle already exists in user account', status_code=404)
+        raise APIException('Already exists in user account', status_code=404)
 
     favorite_vehicle = FavoriteVehicle(user_id = user.id, vehicle_id = vehicle.id)
     db.session.add(favorite_vehicle)
