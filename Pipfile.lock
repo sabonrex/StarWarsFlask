@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8a385abc7e99b6288913e2d33a3365591a646928bd95ad7f7675c49f58de2dce"
+            "sha256": "372b5f1def073b45ef7df57862d538eb3d1b12ac725fe60c35f851d0bddd5163"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -286,6 +286,14 @@
             "index": "pypi",
             "version": "==2.1.1"
         },
+        "postgres": {
+            "hashes": [
+                "sha256:67c57de10c0d39cd5e3437eef7ac895b2b53747603b3edcd261dedec5ac04d4c",
+                "sha256:d81f757acbde2ca12785b8a3d44c39f1e49782963e84eb67d3e029ad67d6b1d3"
+            ],
+            "index": "pypi",
+            "version": "==4.0"
+        },
         "protobuf": {
             "hashes": [
                 "sha256:03038ac1cfbc41aa21f6afcbcd357281d7521b4157926f30ebecc8d4ea59dcb7",
@@ -381,6 +389,14 @@
             ],
             "index": "pypi",
             "version": "==2.9.6"
+        },
+        "psycopg2-pool": {
+            "hashes": [
+                "sha256:529c4100db56a3522cf680ce8d89e71511e37c7e0b1f120ce0dde0f13c6e5844",
+                "sha256:de88615c24ddfc7ee314c566976cfed4bbb009211255f2773ea09e5f938ff400"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
+            "version": "==1.1"
         },
         "python-dotenv": {
             "hashes": [

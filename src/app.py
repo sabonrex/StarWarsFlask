@@ -93,7 +93,7 @@ def get_specific_user2():
 
     return jsonify(user.serialize()), 200 
 
-@app.route('/get-user', methods=['DELETE'])
+@app.route('/user', methods=['DELETE'])
 def delete_specific_user():
     body = request.get_json()
     id = body['id']
@@ -105,7 +105,7 @@ def delete_specific_user():
 
     return jsonify("User deleted"), 200 
 
-@app.route('/get-user', methods=['PUT'])
+@app.route('/user', methods=['PUT'])
 def edit_user():
     body = request.get_json()
     id = body['id']
@@ -120,13 +120,13 @@ def edit_user():
 
 #APIS 
 
-@app.route('/get-people/<int:id>', methods=['GET'])
+@app.route('/people/<int:id>', methods=['GET'])
 def get_specific_people(id):
     people = People.query.get(id)
     
     return jsonify(people.serialize()), 200
 
-@app.route('/get-people', methods=['POST'])
+@app.route('/people', methods=['POST'])
 def get_specific_people2():
     body = request.get_json()
     id = body['id']
@@ -135,7 +135,7 @@ def get_specific_people2():
 
     return jsonify(people.serialize()), 200 
 
-@app.route('/get-people', methods=['DELETE'])
+@app.route('/people', methods=['DELETE'])
 def delete_specific_people():
     body = request.get_json()
     id = body['id']
@@ -147,7 +147,7 @@ def delete_specific_people():
 
     return jsonify("Person successfully deleted!"), 200 
 
-@app.route('/get-people', methods=['PUT'])
+@app.route('/people', methods=['PUT'])
 def edit_people():
     body = request.get_json()
     id = body['id']
@@ -162,13 +162,13 @@ def edit_people():
 
 
 
-@app.route('/get-planet/<int:id>', methods=['GET'])
+@app.route('/planet/<int:id>', methods=['GET'])
 def get_specific_planet(id):
     planet = Planet.query.get(id)
     
     return jsonify(planet.serialize()), 200
 
-@app.route('/get-planet', methods=['POST'])
+@app.route('/planet', methods=['POST'])
 def get_specific_planet2():
     body = request.get_json()
     id = body['id']
@@ -177,7 +177,7 @@ def get_specific_planet2():
 
     return jsonify(planet.serialize()), 200 
 
-@app.route('/get-planet', methods=['DELETE'])
+@app.route('/planet', methods=['DELETE'])
 def delete_specific_planet():
     body = request.get_json()
     id = body['id']
@@ -189,7 +189,7 @@ def delete_specific_planet():
 
     return jsonify("Planet successfully deleted!"), 200 
 
-@app.route('/get-planet', methods=['PUT'])
+@app.route('/planet', methods=['PUT'])
 def edit_planet():
     body = request.get_json()
     id = body['id']
@@ -204,13 +204,13 @@ def edit_planet():
 
 
 
-@app.route('/get-vehicle/<int:id>', methods=['GET'])
+@app.route('/vehicle/<int:id>', methods=['GET'])
 def get_specific_vehicle(id):
     vehicle = Vehicle.query.get(id)
     
     return jsonify(vehicle.serialize()), 200
 
-@app.route('/get-vehicle', methods=['POST'])
+@app.route('/vehicle', methods=['POST'])
 def get_specific_vehicle2():
     body = request.get_json()
     id = body['id']
@@ -219,7 +219,7 @@ def get_specific_vehicle2():
 
     return jsonify(vehicle.serialize()), 200 
 
-@app.route('/get-vehicle', methods=['DELETE'])
+@app.route('/vehicle', methods=['DELETE'])
 def delete_specific_vehicle():
     body = request.get_json()
     id = body['id']
@@ -231,7 +231,7 @@ def delete_specific_vehicle():
 
     return jsonify("Successfully deleted!"), 200 
 
-@app.route('/get-vehicle', methods=['PUT'])
+@app.route('/vehicle', methods=['PUT'])
 def edit_vehicle():
     body = request.get_json()
     id = body['id']
