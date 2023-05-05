@@ -61,13 +61,13 @@ def register_user():
         raise APIException('You need to specify the request body as json object', status_code=400)
     
     if 'email' not in body:
-        raise APIException('You need to specify the email', status_code=400)
+        raise APIException('Add email', status_code=400)
     if 'name' not in body:
-        raise APIException('You need to specify the name', status_code=400)
+        raise APIException('Add name', status_code=400)
     if 'password' not in body:
-        raise APIException('You need to specify the password', status_code=400)
+        raise APIException('Add password', status_code=400)
     if 'is_active' not in body:
-        raise APIException('You need to specify if user is active or not', status_code=400)
+        raise APIException('Specify if user is active or not', status_code=400)
     
     
     new_user = User(email=email, name=name, password=password, is_active=is_active)
@@ -76,7 +76,7 @@ def register_user():
     db.session.add(new_user)
     db.session.commit()
     
-    return jsonify({"mensaje": "Usuario creado correctamente"}), 201
+    return jsonify({"mensaje": "User created successfully"}), 201
 
 @app.route('/get-user/<int:id>', methods=['GET'])
 def get_specific_user(id):
@@ -103,7 +103,7 @@ def delete_specific_user():
     db.session.delete(user)
     db.session.commit
 
-    return jsonify("Usuario borrado"), 200 
+    return jsonify("User deleted"), 200 
 
 @app.route('/get-user', methods=['PUT'])
 def edit_user():
@@ -336,7 +336,7 @@ def list_favorites():
     if not user:
         raise APIException('User not found', status_code=404)
 
-    user_favorites = FavoritePeople.query.filter_by(user_id = user.id).all() #nos devuelve todas las coincidencias
+    user_favorites = FavoritePeople.query.filter_by(user_id = user.id).all() 
     user_favorites_final = list(map(lambda item: item.serialize(), user_favorites))
 
     user_favorites_planets = FavoritePlanet.query.filter_by(user_id = user.id).all()
